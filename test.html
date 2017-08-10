@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="utils.js"></script>
+		<script>
+			window.onload = function() {
+				var myDiv = document.getElementById("myDiv");
+				var myLi = document.getElementById("myLi");
+				var myUl = document.getElementById("myUl");
+				console.log(utils.children(myUl)); //[li, li#myLi, li]
+				console.log(utils.prev(myLi));//<li></li>
+				console.log(utils.next(myLi));//<li></li>
+				console.log(utils.preAll(myDiv));//[div]
+				console.log(utils.nextAll(myDiv));//(4) [div, div, ul#myUl, a]
+				console.log(utils.sibling(myUl));//(2) [div, a]
+				console.log(utils.siblings(myDiv));//(5) [div, div, div, ul#myUl, a]
+				var oLi=document.createElement("li");
+				utils.append(oLi,myUl);
+				utils.prepend(oLi,myUl);
+				utils.insertBefore(oLi,myUl);
+				utils.insertAfter(oLi,myUl);
+			};
+		</script>
+	</head>
+
+	<body>
+		<div>
+
+			<div></div>
+			<div id="myDiv"></div>
+			<div></div>
+			<div></div>
+			<ul id="myUl">
+				<li></li>
+				<li></li>
+				<li id="myLi"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<a></a>
+
+		</div>
+	</body>
+
+</html>
